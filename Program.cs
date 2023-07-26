@@ -1,25 +1,23 @@
-    var builder = WebApplication.CreateBuilder(args);
+// <snippet_HubsNamespace>
 
-// Add services to the container.
-builder.Services.AddRazorPages();
+using RealtimeChatApp.Hubs;
+// </snippet_HubsNamespace>
 
+// <snippet_AddSignalR>
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSignalR();
+// </snippet_AddSignalR>
+
+// <snippet_FilesMiddleware>
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
+app.UseDefaultFiles();
 app.UseStaticFiles();
+// </snippet_FilesMiddleware>
 
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapRazorPages();
+// <snippet_MapHub>
+app.MapHub<ChatHub>("/hub");
+// </snippet_MapHub>
 
 app.Run();

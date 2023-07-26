@@ -1,0 +1,29 @@
+{
+  "name": "realtimechatapp",
+  "version": "1.0.0",
+  "description": "This is a Real-time Chat application built using C# and SignalR. It allows users to communicate with each other in real-time, sending and receiving messages instantly.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode=development --watch",
+    "release": "webpack --mode=production",
+    "publish": "npm run release && dotnet publish -c Release"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "4.0.0",
+    "css-loader": "6.8.1",
+    "html-webpack-plugin": "5.5.3",
+    "mini-css-extract-plugin": "2.7.6",
+    "ts-loader": "9.4.4",
+    "typescript": "5.1.6",
+    "webpack": "5.88.2",
+    "webpack-cli": "5.1.4"
+  },
+  "dependencies": {
+    "@microsoft/signalr": "^7.0.9",
+    "@types/node": "^20.4.5"
+  }
+}

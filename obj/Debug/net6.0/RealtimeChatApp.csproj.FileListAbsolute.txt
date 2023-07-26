@@ -25,3 +25,7 @@
 /home/xuananle/Documents/RealtimeChatApp/obj/Debug/net6.0/ref/RealtimeChatApp.dll
 /home/xuananle/Documents/RealtimeChatApp/obj/Debug/net6.0/RealtimeChatApp.pdb
 /home/xuananle/Documents/RealtimeChatApp/obj/Debug/net6.0/RealtimeChatApp.genruntimeconfig.cache
+/home/xuananle/Documents/RealtimeChatApp/bin/Debug/net6.0/libman.json
+/home/xuananle/Documents/RealtimeChatApp/bin/Debug/net6.0/package-lock.json
+/home/xuananle/Documents/RealtimeChatApp/bin/Debug/net6.0/package.json
+/home/xuananle/Documents/RealtimeChatApp/bin/Debug/net6.0/src/tsconfig.json
