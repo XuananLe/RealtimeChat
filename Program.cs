@@ -1,23 +1,23 @@
-// <snippet_HubsNamespace>
-
 using RealtimeChatApp.Hubs;
-// </snippet_HubsNamespace>
 
-// <snippet_AddSignalR>
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddSignalRCore();
+builder.Services.AddControllersWithViews();
 builder.Services.AddSignalR();
-// </snippet_AddSignalR>
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddRouting();
 
-// <snippet_FilesMiddleware>
 var app = builder.Build();
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
-// </snippet_FilesMiddleware>
+app.UseRouting();
 
-// <snippet_MapHub>
-app.MapHub<ChatHub>("/hub");
-// </snippet_MapHub>
-
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapDefaultControllerRoute();
+    endpoints.MapHub<ChatHub>("/hub");
+    // endpoints.MapHub<CustomHub>("/custom");
+    // endpoints.MapHub<GroupHub>("/group");
+});
 app.Run();
